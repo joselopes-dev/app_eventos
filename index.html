@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechX-2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./logo_TX.jpeg">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
+</head>
+<body>
+    <header class="titulo">
+        <h1 class="text-decoration-underline">Evento TechX 2025</h1>
+        <p>O maior evento de tecnologia do ano!</p>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="text-center text-decoration-underline">Sobre o Evento</h2>
+        <div style="justify-content: center; display: flex;">
+            <div style="width: 80%; text-align: justify;">
+        <p class="lh-base">Participe do TechX 2025 e descubra as últimas tendências em tecnologia e inovação.</p>
+        <p class="lh-base">A edição de 2025 da TechX, será realizado no Centro de convensões, Stúdio 5, um dos principais 
+            eventos de tecnologia e inovação do mundo, irá superar todas 
+            as expectativas. Durante três dias, os maiores especialistas e líderes do setor vão está
+            compartilhando conhecimentos, apresentar tendências e discutir as principais inovações que estão 
+            revolucionando a forma como vivemos e trabalhamos. A programação da TechX 2025 incluiu uma variedade de 
+            painéis e palestras com alguns dos principais especialistas do setor. Alguns dos destaques:</p>
+            <ul>
+                <li><strong>Palestra de abertura:</strong> "O Futuro da Tecnologia" com o CEO da Google, Sundar Pichai.</li>
+                <li><strong>Palestra:</strong> "A Revolução da IA" com o CEO do Facebook, Mark Zuckerberg.</li>
+                <li><strong>Palestra:</strong> "O Futuro da Inteligência Artificial" com o CEO da OpenAI, Sam Altman.</li>
+                <li><strong>Painel de discussão:</strong> "A Ética da IA" com especialistas da Microsoft, Facebook e MIT.</li>
+                <li><strong>Palestra:</strong> "A Revolução da RA e RV" com o fundador da Oculus, Palmer Luckey.</li>
+            </ul>
+        </div></div>
+            <hr>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center">Palestrantes</h2>
+        <div class="row text-center">
+            <div class="col-md-4 speaker">
+                <img src="./sam-altman.jpg" alt="Palestrante 1">
+                <h4>Sam Altman </h4>
+                <p>CEO d'OpenAI.</p><hr>
+            </div>
+            <div class="col-md-4 speaker">
+                <img src="./Mark_Zuckerberg.jpg" alt="Palestrante 2">
+                <h4>Mark Zuckerberg</h4>
+                <p>CEO do Facebook.</p><hr>
+            </div>
+            <div class="col-md-4 speaker">
+                <img src="./Sundar_Pichai.jpg" alt="Palestrante 3">
+                <h4>Sundar Pichai</h4>
+                <p>CEO do Google.</p><hr>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center">Inscreva-se</h2>
+        <form id="registrationForm" class="w-50 mx-auto">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="Telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+        <p id="successMessage" class="text-center text-success mt-3" style="display: none;">Inscrição realizada com sucesso!</p>
+    </section>
+
+    <hr class="my-5">
+    
+    <div class="d-flex justify-content-center align-items-center">
+      <!-- Mapa do Google Centralizado -->
+      <div  style="margin-bottom: 20px;">
+        <h3>Como Chegar</h3>
+      <p>Veja abaixo o mapa para nos encontrar:</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.887443306104!2d-59.98596329128263!3d-3.124455496837899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c051c3ab35fbb%3A0xfc3e232879b8ab6a!2sStudio%205%20Shopping%20e%20Conven%C3%A7%C3%B5es!5e0!3m2!1spt-BR!2sbr!4v1740495352998!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Evento TechX. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            document.getElementById('successMessage').style.display = 'block';
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            this.reset();
+       
+
+        this.reset();
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+         });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
